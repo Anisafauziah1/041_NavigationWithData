@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">EsJumbo</string>
+    <string name="flavor1" />
+    <string name="flavor2" />
+    <string name="flavor3" />
+    <string name="flavor4" />
+    <string name="flavor5" />
+    <string name="subtotal_price" />
+    <string name="quantity" />
+    <string name="flavor" />
+    <string name="send" />
+    <string name="cancel" />
+    <string name="next" />
+    <string name="confirm" />
+    <string name="back_button" />
+</resources>
