@@ -53,7 +53,7 @@ fun HalamanHome(
             ) {
                 Image(painter = image, contentDescription = "", contentScale = ContentScale.Crop)
                 Text(
-                    text = "Anderson",
+                    text = "NCT",
                     color = Color.DarkGray,
                     fontFamily = FontFamily.Monospace,
                     fontSize = 35.sp,
