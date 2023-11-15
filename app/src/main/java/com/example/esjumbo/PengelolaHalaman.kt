@@ -28,7 +28,8 @@ import com.example.esjumbo.Data.SumberData
 enum class PengelolaHalaman {
     Home,
     Rasa,
-    Summary
+    Summary,
+    CustomerDetails,
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -77,7 +78,7 @@ fun EsJumboApp(
         ) {
             composable(route = PengelolaHalaman.Home.name) {
                 HalamanHome(onNextButtonClicked = {
-                    navController.navigate(PengelolaHalaman.Rasa.name)
+                    navController.navigate(PengelolaHalaman.CustomerDetails.name)
                 }
                 )
             }
