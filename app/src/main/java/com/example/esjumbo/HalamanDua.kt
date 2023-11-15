@@ -29,9 +29,8 @@ fun HalamanDua(
     modifier: Modifier = Modifier
 ){
     val items = listOf(
-        Pair(stringResource(R.string.quantity), orderUIState.jumlah),
-        Pair(stringResource(R.string.flavor), orderUIState.rasa)
-    )
+        Pair("Nama Pelanggan", orderUIState.namaPelanggan),
+        )
     Column(
         modifier = Modifier,
         verticalArrangement = Arrangement.SpaceBetween
