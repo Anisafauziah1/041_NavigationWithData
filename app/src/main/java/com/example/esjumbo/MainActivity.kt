@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -32,6 +33,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     EsJumboTheme{
-        HalamanHome(onNextButtonClicked = {})
+        HalamanHome (onNextButtonClicked = {})
     }
 }
