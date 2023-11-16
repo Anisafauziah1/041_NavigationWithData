@@ -13,4 +13,7 @@
     <string name="next" />
     <string name="confirm" />
     <string name="back_button" />
+    <string name="namaCust">Nama</string>
+    <string name="alamatCust">Alamat</string>
+    <string name="telpCust">No Telp</string>
 </resources>

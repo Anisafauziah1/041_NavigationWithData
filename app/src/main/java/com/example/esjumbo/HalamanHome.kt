@@ -81,22 +81,14 @@ fun HalamanHome(
                 modifier = Modifier.weight(1f),
                 onClick = onNextButtonClicked
             ) {
-                Text(stringResource(R.string.next))
+                Text(stringResource(R.string.confirm))
             }
         }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun prev() {
-    EsJumboTheme{
-    }
-}
 
-@Composable
-fun EsJumboTheme(content: () -> Unit) {
 
-}
+
 
 

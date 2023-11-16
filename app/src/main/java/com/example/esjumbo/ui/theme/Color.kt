@@ -1,4 +1,4 @@
-package com.example.esjumbo.theme
+package com.example.esjumbo.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

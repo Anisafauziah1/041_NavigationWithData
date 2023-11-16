@@ -1,6 +1,7 @@
 package com.example.esjumbo
 
 import androidx.lifecycle.ViewModel
+import com.example.esjumbo.Data.CustumerUIState
 import com.example.esjumbo.Data.OrderUIState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,16 +14,16 @@ private const val HARGA_PER_CUP = 3000
 class OrderViewModel : ViewModel() {
     private val _stateUI = MutableStateFlow(OrderUIState())
     val stateUI: StateFlow<OrderUIState> = _stateUI.asStateFlow()
+    private val _custUI = MutableStateFlow(CustumerUIState())
+    val custUI: StateFlow<CustumerUIState> = _custUI.asStateFlow()
 
 
-    fun setCustomerDetails(nama: String, nomor: String, alamat: String){
-        _stateUI.update { stateSaatIni ->
-            stateSaatIni.copy(
-                namaPelanggan = nama,
-                nomorTelepon = nomor,
-                alamat = alamat
-            )
-        }
+    fun setCustomerDetails(list: MutableList<String>){
+        _custUI.update { stateSaatIni -> stateSaatIni.copy(
+            namaPelanggan = list[0],
+            alamat = list[1],
+            nomorTelepon = list[2]
+        ) }
 
     }
     fun setJumlah(jmlEsJumbo: Int) {

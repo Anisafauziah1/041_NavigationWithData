@@ -24,13 +24,15 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomDetailsScreen(
-    onConfirmButtonClicked: (String, String,String)-> Unit,
+    onConfirmButtonClicked: (MutableList<String>) -> Unit,
     onCancelButtonClicked: () -> Unit
 ){
     var namaPelanggan by remember{ mutableStateOf("") }
     var nomorTelepon by remember{ mutableStateOf("") }
     var alamat by remember{ mutableStateOf("")
     }
+
+    var listDataCust: MutableList<String> = mutableListOf(namaPelanggan, nomorTelepon, alamat)
 
     Column(
         modifier = Modifier
@@ -75,11 +77,7 @@ fun CustomDetailsScreen(
             }
 
             Button(
-                onClick = {
-                    if (namaPelanggan.isNotEmpty() && nomorTelepon.isNotEmpty() && alamat.isNotEmpty()){
-                        onConfirmButtonClicked(namaPelanggan, nomorTelepon, alamat)
-                    }
-                }
+                onClick = { onConfirmButtonClicked(listDataCust) }
             ) {
                 Text(text = "Next")
             }

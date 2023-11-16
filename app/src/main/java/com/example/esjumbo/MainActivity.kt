@@ -10,8 +10,8 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.esjumbo.EsJumboApp // Gantilah dengan package yang sesuai
-import com.example.esjumbo.EsJumboTheme // Gantilah dengan package yang sesuai
+import com.example.esjumbo.EsJumboApp
+import com.example.esjumbo.ui.theme.EsJumboTheme
 
 
 
@@ -20,11 +20,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EsJumboTheme {
+             EsJumboTheme{
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colors.background
                 ){
                     EsJumboApp()
                 }
@@ -36,10 +36,3 @@ class MainActivity : ComponentActivity() {
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    EsJumboTheme {
-        HalamanHome(onNextButtonClicked = {})
-    }
-}

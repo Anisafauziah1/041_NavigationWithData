@@ -21,6 +21,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.esjumbo.Data.CustumerUIState
+import com.example.esjumbo.Data.OrderUIState
 import com.example.esjumbo.Data.SumberData
 
 
@@ -71,6 +73,7 @@ fun EsJumboApp(
         }
     ) { innerPadding ->
         val uiState by viewModel.stateUI.collectAsState()
+        val custState by viewModel.custUI.collectAsState()
         NavHost(
             navController = navController,
             startDestination = PengelolaHalaman.Home.name,
@@ -82,23 +85,18 @@ fun EsJumboApp(
                 }
                 )
             }
-            composable(route = PengelolaHalaman.Rasa.name) {
+            composable(route = PengelolaHalaman.CustomerDetails.name) {
                 val context = LocalContext.current
-                HalamanSatu(
-                    pilihanRasa = SumberData.flavors.map { id -> context.resources.getString(id) },
-                    onSelectionChanged = { viewModel.setRasa(it) },
-                    onConfirmButtonClicked = { viewModel.setJumlah(it) },
-                    onNextButtonClicked = { navController.navigate(PengelolaHalaman.Summary.name) },
-                    onCancelButtonClicked = {
-                        cancelOrderAndNavigateToHome(
-                            viewModel,
-                            navController
-                        )
-                    })
+                CustomDetailsScreen(
+                    onConfirmButtonClicked = {
+                        viewModel.setCustomerDetails(it)},
+                    onCancelButtonClicked = {navController.popBackStack(PengelolaHalaman.Home.name, false)}
+                )
             }
             composable(route = PengelolaHalaman.Summary.name) {
                 HalamanDua(
                     orderUIState = uiState,
+                    custUIState = custState,
                     onCancelButtonClicked = { cancelOrderAndNavigateToRasa(navController) })
             }
         }

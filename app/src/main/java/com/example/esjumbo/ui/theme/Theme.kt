@@ -1,4 +1,4 @@
-package com.example.esjumbo.theme
+package com.example.esjumbo.ui.theme
 
 import android.app.Activity
 import android.os.Build
